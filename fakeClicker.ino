@@ -58,6 +58,7 @@ void loop() {
       commandBuffer[cursor + 1] = "\0";
       parseCommand(commandBuffer);
       cursor = 0;
+      memset(commandBuffer,' ',sizeof(commandBuffer);
     }
     cursor ++;
   }
@@ -77,7 +78,7 @@ void parseCommand(char *commandtext) {
         Serial.println("argMustBeNumber");
       }
     } else {
-      Serial.println("argrequired");
+      Serial.println("argRequired");
     }
   } else if (strcmp(command, "channel") == 0) {
     Serial.println("commandChannel");
@@ -90,7 +91,7 @@ void parseCommand(char *commandtext) {
         return;
       }
     } else {
-      Serial.println("argrequired");
+      Serial.println("argRequired");
       return;
     }
   } else if (strcmp(command, "adress") == 0) {
@@ -98,7 +99,7 @@ void parseCommand(char *commandtext) {
     for (int i = 0; i < 3; i++){
       arg = strsep(&commandtext," ");
       if (arg == NULL){
-        Serial.print("3argsrequired");
+        Serial.print("3argsRequired");
         return;
       } else if (sscanf(arg,"%d",&args[0]) == 1) {
         //nothing here
