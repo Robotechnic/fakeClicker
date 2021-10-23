@@ -154,4 +154,15 @@ void Window::on_multipleSend_clicked() {
 			}
 		}
 	}
+
 }
+
+void Window::on_minRandomDelay_valueChanged(int arg1){
+	this->clicker->setMinDelay(arg1);
+}
+
+
+void Window::on_maxRandomDelay_valueChanged(int arg1){
+	this->clicker->setMaxDelay(arg1);
+}
+

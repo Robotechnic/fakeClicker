@@ -102,7 +102,7 @@ void parseCommand(char *commandtext) {
       if (arg == NULL){
         Serial.print("3argsRequired");
         return;
-      } else if (sscanf(arg,"%d",&args[0]) == 1) {
+      } else if (sscanf(arg,"%d",&args[i]) == 1) {
         //nothing here
       } else {
         Serial.println("argsMustBeNumber");

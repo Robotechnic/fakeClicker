@@ -43,6 +43,10 @@ private slots:
 
 	void on_multipleSend_clicked();
 
+	void on_minRandomDelay_valueChanged(int arg1);
+
+	void on_maxRandomDelay_valueChanged(int arg1);
+
 private:
 	Ui::Window *ui;
 

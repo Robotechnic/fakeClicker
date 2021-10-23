@@ -4,6 +4,7 @@
 #include <QThread>
 #include <QObject>
 #include <QSerialPort>
+#include <QRandomGenerator>
 
 #include <QMutex>
 #include <QQueue>
@@ -32,21 +33,29 @@ public:
 
 	void newResponsePacket(int adress[3], response resp, bool autoStart = true);
 
-	bool isConnected(){return this->clicker.isOpen();};
+	bool isConnected(){return this->clicker->isOpen();};
 	void useRandomDelay(bool use){this->randomDelay = use;};
+
+	void setMinDelay(int delay){this->minDelay = delay;};
+	void setMaxDelay(int delay){this->maxDelay = delay;};
 
 public slots:
 	void serialError(QSerialPort::SerialPortError error);
 	void readIncoming();
 
+private slots:
+	void sendResponsePacket(const responsePacket &response);
+
 signals:
 	void disconnected();
 
+	void packetReady(const responsePacket &response);
+
 private:
-	void sendResponsePacket(const responsePacket &response);
-	QSerialPort clicker;
+	QSerialPort *clicker;
 
 	bool randomDelay;
+	int minDelay, maxDelay;
 
 	QMutex packetLock;
 	QQueue<responsePacket> toSend;
