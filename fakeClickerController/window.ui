@@ -16,7 +16,10 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="2" column="0">
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="randomDelayGroup">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -54,7 +57,7 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QSpinBox" name="spinBox_2">
+        <widget class="QSpinBox" name="maxRandomDelay">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -83,7 +86,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QSpinBox" name="spinBox">
+        <widget class="QSpinBox" name="minRandomDelay">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -106,7 +109,10 @@
      </widget>
     </item>
     <item row="0" column="1" rowspan="2">
-     <widget class="QGroupBox" name="groupBox_3">
+     <widget class="QGroupBox" name="multipleReponseGroup">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -127,7 +133,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QSpinBox" name="spinBox_10">
+           <widget class="QSpinBox" name="toSend4">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -146,7 +152,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <widget class="QSpinBox" name="spinBox_12">
+           <widget class="QSpinBox" name="toSend5">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -165,7 +171,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
-           <widget class="QSpinBox" name="spinBox_13">
+           <widget class="QSpinBox" name="toSend8">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -184,7 +190,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QSpinBox" name="spinBox_7">
+           <widget class="QSpinBox" name="toSend1">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -203,7 +209,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QSpinBox" name="spinBox_9">
+           <widget class="QSpinBox" name="toSend3">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -215,7 +221,7 @@
        <item row="0" column="1" colspan="4">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QSpinBox" name="spinBox_6">
+          <widget class="QSpinBox" name="baseByte1">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -228,7 +234,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_4">
+          <widget class="QSpinBox" name="baseByte2">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -241,7 +247,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_5">
+          <widget class="QSpinBox" name="baseByte3">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -265,7 +271,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QSpinBox" name="spinBox_8">
+           <widget class="QSpinBox" name="toSend2">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -284,7 +290,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
-           <widget class="QSpinBox" name="spinBox_15">
+           <widget class="QSpinBox" name="toSend7">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -316,7 +322,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
-           <widget class="QSpinBox" name="spinBox_14">
+           <widget class="QSpinBox" name="toSend9">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -348,7 +354,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
-           <widget class="QSpinBox" name="spinBox_11">
+           <widget class="QSpinBox" name="toSend6">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -367,7 +373,7 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
-           <widget class="QSpinBox" name="spinBox_16">
+           <widget class="QSpinBox" name="toSend0">
             <property name="maximum">
              <number>10000</number>
             </property>
@@ -403,9 +409,16 @@
         </spacer>
        </item>
        <item row="5" column="4">
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="multipleSend">
          <property name="text">
           <string>Send</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QPushButton" name="resetMultiple">
+         <property name="text">
+          <string>Reset</string>
          </property>
         </widget>
        </item>
@@ -424,10 +437,23 @@
        <string>Serial</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton">
+       <item row="0" column="1">
+        <widget class="QComboBox" name="port">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="baudRate"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Connect</string>
+          <string>Baud</string>
          </property>
         </widget>
        </item>
@@ -438,23 +464,17 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QComboBox" name="comboBox_2"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
+       <item row="2" column="1">
+        <widget class="QPushButton" name="connect">
          <property name="text">
-          <string>Baud</string>
+          <string>Connect</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="updatePort">
          <property name="text">
-          <string>Update</string>
+          <string>Refresh</string>
          </property>
         </widget>
        </item>
@@ -462,7 +482,10 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QGroupBox" name="groupBox_15">
+     <widget class="QGroupBox" name="oneReponseGroup">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="title">
        <string>One reponse</string>
       </property>
@@ -475,7 +498,7 @@
         </widget>
        </item>
        <item row="1" column="1" colspan="2">
-        <widget class="QSpinBox" name="spinBox_20">
+        <widget class="QSpinBox" name="numberToSend">
          <property name="maximum">
           <number>9</number>
          </property>
@@ -497,7 +520,7 @@
        <item row="0" column="1" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QSpinBox" name="spinBox_17">
+          <widget class="QSpinBox" name="adress1">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -510,7 +533,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_18">
+          <widget class="QSpinBox" name="adress2">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -523,7 +546,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_19">
+          <widget class="QSpinBox" name="adress3">
            <property name="prefix">
             <string>0x</string>
            </property>
@@ -538,7 +561,7 @@
         </layout>
        </item>
        <item row="2" column="2">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="oneSend">
          <property name="text">
           <string>Send</string>
          </property>
@@ -548,7 +571,10 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBox_4">
+     <widget class="QGroupBox" name="channelGroup">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="title">
        <string>Channel</string>
       </property>
@@ -557,7 +583,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QSpinBox" name="spinBox_3">
+        <widget class="QSpinBox" name="channel">
          <property name="maximum">
           <number>81</number>
          </property>
@@ -567,7 +593,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="setChannel">
          <property name="text">
           <string>Set channel</string>
          </property>
@@ -590,6 +616,214 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>port</tabstop>
+  <tabstop>baudRate</tabstop>
+  <tabstop>connect</tabstop>
+  <tabstop>updatePort</tabstop>
+  <tabstop>channel</tabstop>
+  <tabstop>setChannel</tabstop>
+  <tabstop>randomDelayGroup</tabstop>
+  <tabstop>minRandomDelay</tabstop>
+  <tabstop>maxRandomDelay</tabstop>
+  <tabstop>baseByte1</tabstop>
+  <tabstop>baseByte2</tabstop>
+  <tabstop>baseByte3</tabstop>
+  <tabstop>toSend1</tabstop>
+  <tabstop>toSend2</tabstop>
+  <tabstop>toSend3</tabstop>
+  <tabstop>toSend4</tabstop>
+  <tabstop>toSend5</tabstop>
+  <tabstop>toSend6</tabstop>
+  <tabstop>toSend7</tabstop>
+  <tabstop>toSend8</tabstop>
+  <tabstop>toSend9</tabstop>
+  <tabstop>toSend0</tabstop>
+  <tabstop>multipleSend</tabstop>
+  <tabstop>resetMultiple</tabstop>
+  <tabstop>adress1</tabstop>
+  <tabstop>adress2</tabstop>
+  <tabstop>adress3</tabstop>
+  <tabstop>numberToSend</tabstop>
+  <tabstop>oneSend</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend0</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>432</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>437</x>
+     <y>381</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend8</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>523</x>
+     <y>420</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>multipleReponseGroup</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend9</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>555</x>
+     <y>391</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend7</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>535</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend4</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>418</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>347</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend5</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>437</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend6</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>548</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend1</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>546</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>546</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>444</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>543</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>522</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetMultiple</sender>
+   <signal>clicked()</signal>
+   <receiver>toSend9</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>568</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>524</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -58,9 +58,10 @@ void loop() {
       commandBuffer[cursor + 1] = "\0";
       parseCommand(commandBuffer);
       cursor = 0;
-      memset(commandBuffer,' ',sizeof(commandBuffer);
+      memset(commandBuffer,' ',sizeof(commandBuffer));
+    } else {
+      cursor ++;
     }
-    cursor ++;
   }
 }
 
