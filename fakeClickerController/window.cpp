@@ -16,6 +16,18 @@ Window::Window(QWidget *parent)
 
 	//setup clicker manager
 	connect(clicker,&ClickerManager::disconnected,this,&Window::serialDisconnected);
+
+	//setup number to send
+	this->numberToSend.append(ui->toSend0);
+	this->numberToSend.append(ui->toSend1);
+	this->numberToSend.append(ui->toSend2);
+	this->numberToSend.append(ui->toSend3);
+	this->numberToSend.append(ui->toSend4);
+	this->numberToSend.append(ui->toSend5);
+	this->numberToSend.append(ui->toSend6);
+	this->numberToSend.append(ui->toSend7);
+	this->numberToSend.append(ui->toSend8);
+	this->numberToSend.append(ui->toSend9);
 }
 
 Window::~Window() {
@@ -86,3 +98,60 @@ void Window::on_randomDelayGroup_toggled(bool arg1) {
 	this->clicker->useRandomDelay(arg1);
 }
 
+
+void Window::on_adress1_editingFinished() {
+	if (ui->adress1->hasFocus()){
+		this->on_oneSend_clicked();
+	}
+}
+
+void Window::on_adress2_editingFinished() {
+	if (ui->adress2->hasFocus()){
+		this->on_oneSend_clicked();
+	}
+}
+
+void Window::on_adress3_editingFinished() {
+	if (ui->adress3->hasFocus()){
+		this->on_oneSend_clicked();
+	}
+}
+
+void Window::on_numberToSend_editingFinished() {
+	if (ui->numberToSend->hasFocus()){
+		this->on_oneSend_clicked();
+	}
+}
+
+void Window::on_actionQuit_triggered(){
+	this->close();
+}
+
+void Window::on_multipleSend_clicked() {
+	QSpinBox *box;
+
+	int adress [] = {
+		ui->baseByte1->value(),
+		ui->baseByte2->value(),
+		ui->baseByte3->value()
+	};
+
+	for (int i = 0; i < this->numberToSend.length(); i++){
+		box = this->numberToSend.at(i);
+		for (int j = 0; j < box->value(); ++j) {
+			this->clicker->newResponsePacket(adress,i);
+
+			//increment adress
+			adress[0] += 1;
+			if (adress[0] > 255){
+				adress[0] = 0;
+				adress[1] += 1;
+			}
+
+			if (adress[1] > 255){
+				adress[1] = 0;
+				adress[2] += 1;
+			}
+		}
+	}
+}

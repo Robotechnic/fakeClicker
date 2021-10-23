@@ -59,19 +59,16 @@ void ClickerManager::run(){
 
 
 void ClickerManager::sendResponsePacket(const responsePacket &response){
-	qDebug()<<QString("adress %1 %2 %3").arg(response.adress[0])
-			.arg(response.adress[1])
-			.arg(response.adress[2])
-			.toStdString().c_str();
+	qDebug()<<response.resp;
 	this->clicker.write(
-				QString("adress %1 %2 %3").arg(response.adress[0])
-										  .arg(response.adress[1])
-										  .arg(response.adress[2])
-										  .toStdString().c_str()
+				QString("adress %1 %2 %3\n").arg(response.adress[0])
+											.arg(response.adress[1])
+											.arg(response.adress[2])
+											.toStdString().c_str()
 			);
 
 	this->clicker.write(
-				QString("send %1").arg(response.resp)
+				QString("send %1\n").arg(response.resp)
 				.toStdString().c_str()
 			);
 }

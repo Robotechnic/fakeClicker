@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSerialPortInfo>
 #include <QMessageBox>
+#include <QSpinBox>
 
 #include "clickermanager.h"
 
@@ -32,10 +33,21 @@ private slots:
 
 	void on_randomDelayGroup_toggled(bool arg1);
 
+	void on_adress1_editingFinished();
+	void on_adress2_editingFinished();
+	void on_adress3_editingFinished();
+
+	void on_actionQuit_triggered();
+
+	void on_numberToSend_editingFinished();
+
+	void on_multipleSend_clicked();
+
 private:
 	Ui::Window *ui;
 
 	QList<QSerialPortInfo> infoList;
+	QList<QSpinBox *> numberToSend;
 
 	ClickerManager *clicker;
 };
