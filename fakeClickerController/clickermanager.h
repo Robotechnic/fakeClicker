@@ -31,13 +31,15 @@ public:
 	bool connectSerial(QSerialPortInfo &info, int baud);
 	void disconnectSerial();
 
-	void newResponsePacket(int adress[3], response resp, bool autoStart = true);
+	void newResponsePacket(int adress[3], response resp);
 
 	bool isConnected(){return this->clicker->isOpen();};
 	void useRandomDelay(bool use){this->randomDelay = use;};
 
 	void setMinDelay(int delay){this->minDelay = delay;};
 	void setMaxDelay(int delay){this->maxDelay = delay;};
+
+	void setChannel(int channel);
 
 public slots:
 	void serialError(QSerialPort::SerialPortError error);

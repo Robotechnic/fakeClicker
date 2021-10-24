@@ -86,6 +86,13 @@ void ClickerManager::sendResponsePacket(const responsePacket &response){
 	this->msleep(100); //wait 50ms to be sure that everithing has bee send
 }
 
+void ClickerManager::setChannel(int channel){
+	this->clicker->write(
+				QString("channel %1").arg(channel)
+				.toStdString().c_str()
+			);
+}
+
 void ClickerManager::readIncoming(){
 	qDebug()<<"Incoming info";
 	QByteArray data = this->clicker->readAll();

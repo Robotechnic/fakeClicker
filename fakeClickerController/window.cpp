@@ -166,3 +166,15 @@ void Window::on_maxRandomDelay_valueChanged(int arg1){
 	this->clicker->setMaxDelay(arg1);
 }
 
+
+void Window::on_setChannel_clicked(){
+	this->clicker->setChannel(ui->channel->value());
+}
+
+
+void Window::on_channel_editingFinished(){
+	if (ui->channel->hasFocus()){
+		this->on_setChannel_clicked();
+	}
+}
+
