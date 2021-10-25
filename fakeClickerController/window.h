@@ -47,6 +47,10 @@ private slots:
 
 	void on_maxRandomDelay_valueChanged(int arg1);
 
+	void on_setChannel_clicked();
+
+	void on_channel_editingFinished();
+
 private:
 	Ui::Window *ui;
 
